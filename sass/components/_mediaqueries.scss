@@ -1,0 +1,61 @@
+/* Sm tablet styles 
+---------------------------------------------------------- */
+@media screen and (min-width: 375px) {
+
+    .carImg {
+        width: 100px;
+    }
+
+    .carData {
+        margin: 10px;
+        grid-column: 5 / 9;
+        grid-row: 1 / 3;
+    }
+}
+
+
+/* Lg tablet & laptop styles 
+---------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+
+    
+    body {
+        font-size: 18px;
+        
+        
+        .carData {
+            margin: 15px;
+            grid-column: 5 / 9;
+            grid-row: 1 / 3;
+        }
+    }
+    
+
+    .grid {
+        width: 100%;
+        max-width: 1060px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}
+
+/* Desktop tablet styles 
+---------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        font-size: 20px;
+
+    }
+    
+    .carImg {
+        width: 250px;
+    }
+
+        .carData {
+            margin: 20px;
+            grid-column: 5 / 9;
+            grid-row: 1 / 3;
+    }
+}
