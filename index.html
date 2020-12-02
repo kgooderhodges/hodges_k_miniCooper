@@ -2,57 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Cooper - Get In & Drive</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Cooper - Get In & Drive</title>
+  <link rel="stylesheet" href="css/main.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oxygen&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- !this app ID is connecting to vue, and vue needs to connect to this section only -->
-    <main id="app">
-        <section class="heroImg">
-            <div class="heroTxt">
-                <h1>{{ title }}</h1>
-                <h2>{{ subtitle }}</h2>
-            </div>
-        </section>
+  <!-- !this app ID is connecting to vue, and vue needs to connect to this section only -->
+  <main id="app">
+    <section class="heroImg">
+      <div class="heroTxt">
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+      </div>
+    </section>
 
-        <!-- show the car data in collection -->
-        <section class="carData grid">
-            <section id="carContainer">
+    <!-- show the car data in collection -->
+    <section class="carData grid">
+      <section id="carContainer">
 
-                <ul>
-                    <!-- <h2 class="carHeader">Not Your Mom's Mini</h2> -->
-                    <li v-for="mini, index in cars">
-                        <!-- *v-for is for passing through rows of data-->
-                        <!-- !you can use, v-on: or @ to link to Vue -->
-                        <p>{{ mini.name }}</p>
+        <ul>
+          <li v-for="mini, index in cars">
+            <!-- *v-for is for passing through rows of data-->
+            <!-- !you can use, v-on: or @ to link to Vue -->
+            <p>{{ mini.name }}</p>
 
-                        <a href="" @click.prevent="showMiniData(mini)" :class="
+            <a href="" @click.prevent="showMiniData(mini)" :class="
                 {removeAformat}"> <img class="carImg" v-bind:src="mini.image" alt="mini.name"></a>
 
 
-                    </li>
-                </ul>
-            </section>
-            <!-- !show mnore section -->
-            <section class="mini-data" :class="{'show-mini' : showCarData}">
-                <h2>{{ currentCarData.name }}</h2>
-                <p> {{ currentCarData.price }}</p>
-                <p> {{ currentCarData.engine }}</p>
-                <p> {{ currentCarData.description }}</p>
-            </section>
-        </section>
-    </main>
-    <!-- !This will be how we write the contact form prevent for vue -->
-    <!-- <form @submit.prevent="handleForm"></form> -->
-    <script src="js/main.js" type="module"></script>
+          </li>
+        </ul>
+      </section>
+      <!-- !show mnore section -->
+      <section class="mini-data" :class="{'show-mini' : showCarData}">
+        <h2>{{ currentCarData.name }}</h2>
+        <p> {{ currentCarData.price }}</p>
+        <p> {{ currentCarData.engine }}</p>
+        <p> {{ currentCarData.description }}</p>
+      </section>
+    </section>
+  </main>
+  <!-- !This will be how we write the contact form prevent for vue -->
+  <script src="js/main.js" type="module"></script>
 </body>
 
 </html>
