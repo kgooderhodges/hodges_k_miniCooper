@@ -13,22 +13,19 @@ import { fetchData } from "./components/DataMiner.js";
             cars: []
         },
 
-        // this is the lifecycle hook we want to target. Vue is done creating itself, and has attached itself to the "app" div on the the page. 
-
         // mounted events only fire once in it's lifecycle. You would need to use updated if it should fire more than once
         mounted: function() {
-            console.log("Vue is mounted, trying a fetch for the initial data");
-            // alert("Hey there! your vue instance is ready");
+            console.log("Vue has mounted");
+
             fetchData("./includes/index.php")
                 .then(data => {
                     data.forEach(minis => this.cars.push(minis));
                 })
                 .catch(err => console.error(err));
-            // this is saying "Go grab THIS array, professors".
             // push says "Shove THIS array into this place". Push is an array method
         },
         
-        // run a method when we change our view (update the DOM with Vue)
+        // run a method when we change our view
         updated: function() {
             console.log('Vue just updated the DOM');
         },
@@ -49,13 +46,12 @@ import { fetchData } from "./components/DataMiner.js";
             showMiniData(target) {
                 // show this prof from the professors array 
                 console.log("clicked to view mini data", target, target.name);
-                // the "this" keyword inside a vue instance REFERS to the Vue instance itself
-                // question mark is a shorthand for IF. This statement is saying if it's false, make it true. if it's true make it false.
+
                 this.showCarData = this.showCarData ? false: true;
                 // make the selected prof's data visible
                 this.currentCarData = target;
             },
             
         }
-    }).$mount("#app"); // this is a more common way of linking Vue to wrapper in HTML (the main #app)
+    }).$mount("#app"); 
 })();
